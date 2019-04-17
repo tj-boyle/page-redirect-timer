@@ -1,0 +1,26 @@
+{
+    "name": "Page Redirect Timer",
+    "description": "Redirect a page at a given time",
+    "version": "0.1",
+    "manifest_version": 2,
+    "permissions": ["declarativeContent", "activeTab", "storage"],
+    "content_scripts": [{
+        "matches": ["*://www.google.com/*"],
+        "js": ["script.js"]
+    }],
+    "background": {
+        "scripts": [
+            "./background.js"
+        ],
+        "persistent": false
+    },
+    "page_action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "images/test.png"
+        }
+    },
+    "icons": {
+        "16": "images/test.png"
+    }
+}
