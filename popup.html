@@ -1,16 +1,50 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <style>
-      button {
-        height: 30px;
-        width: 30px;
-        outline: none;
-      }
-    </style>
-  </head>
-  <body>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Getting Started building chrome Extensions</title>
+
+    <!-- Bootstrap -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/custom.css" rel="stylesheet">
+</head>
+<body>
+    <a id="close-button" class="btn btn-link pull-right">Close</a>
+    <div class="container">
+        <h3>Tab redirect timer</h3>
+        <hr>
+        <div class="set-timer-container">
+            <h4 class="text-center">Redirect this tab:</h4>
+            <form id="timer-form" class="timer-form">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="center">
+                            <span>at</span>
+                            <input type="time" id="timer-timeout-time" class="form-control timeout-time" title="Redirect current tab to submitted url">
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="center">
+                            <span>to</span>
+                            <input type="text" id="timer-url" class="form-control url" title="Redirect current tab at a fixed time">
+                        </div>
+                    </div>
+                </div>
+                <div class="row text-center">
+                    <input id="timer-submit" type="submit" value="Set Redirect" class="btn btn-primary">
+                </div>
+            </form>
+        </div>
+    </div>
+
     <button id="changeColor"></button>
+    <script src="assets/js/jquery-3.2.1.min.js"></script>
     <script src="popup.js"></script>
-  </body>
+    <script src="assets/js/bootstrap.min.js"></script>
+</body>
 </html>

@@ -3,13 +3,23 @@
     "description": "Redirect a page at a given time",
     "version": "0.1",
     "manifest_version": 2,
-    "permissions": ["declarativeContent", "activeTab", "storage"],
+    "permissions": [
+        "declarativeContent",
+        "activeTab",
+        "tabs",
+        "storage",
+        "http://*/",
+        "https://*/"
+    ],
     "content_scripts": [{
         "matches": ["*://www.google.com/*"],
-        "js": ["script.js"]
+        "js": ["script.js", "redirect.js"]
     }],
     "background": {
         "scripts": [
+            "./assets/js/jquery-3.2.1.min.js",
+            "./assets/js/bootstrap.min.js",
+            "./redirect.js",
             "./background.js"
         ],
         "persistent": false
@@ -17,10 +27,10 @@
     "page_action": {
         "default_popup": "popup.html",
         "default_icon": {
-            "16": "images/test.png"
+            "16": "assets/images/test.png"
         }
     },
     "icons": {
-        "16": "images/test.png"
+        "16": "assets/images/test.png"
     }
 }
